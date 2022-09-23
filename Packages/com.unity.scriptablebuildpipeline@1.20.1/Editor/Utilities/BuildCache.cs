@@ -13,6 +13,7 @@ using UnityEngine.Assertions;
 using UnityEngine.Build.Pipeline;
 using System.Collections.Concurrent;
 using System.Reflection;
+using Debug = UnityEngine.Debug;
 
 namespace UnityEditor.Build.Pipeline.Utilities
 {
@@ -778,7 +779,8 @@ namespace UnityEditor.Build.Pipeline.Utilities
             long maxCacheSize = (long)maximumCacheSize;
             // Get sizes based on common directory root for a guid / hash
             ComputeCacheSizeAndFolders(out long currentCacheSize, out List<CacheFolder> cacheFolders);
-            if (currentCacheSize < maxCacheSize)
+            
+            if (currentCacheSize < maxCacheSize || ScriptableBuildPipeline.buildPruneDisabled)
                 return;
 
             PruneCacheFolders(maxCacheSize, currentCacheSize, cacheFolders);
@@ -810,6 +812,7 @@ namespace UnityEditor.Build.Pipeline.Utilities
 
         internal static void PruneCacheFolders(long maximumCacheSize, long currentCacheSize, List<CacheFolder> cacheFolders)
         {
+            Debug.Log($"PruneCacheFolders(maximumCacheSize: {maximumCacheSize}, currentCacheSize: {currentCacheSize}, cacheFolders: {cacheFolders.Count})");
             cacheFolders.Sort((a, b) => a.LastAccessTimeUtc.CompareTo(b.LastAccessTimeUtc));
             // Need to delete sets of files as the .info might reference a specific file artifact
             foreach (var cacheFolder in cacheFolders)
@@ -821,6 +824,7 @@ namespace UnityEditor.Build.Pipeline.Utilities
             }
         }
 
+        
         // TODO: Add to IBuildCache interface when IBuildLogger becomes public
         internal void SetBuildLogger(IBuildLogger profiler)
         {

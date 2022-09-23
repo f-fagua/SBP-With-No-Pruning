@@ -51,6 +51,7 @@ namespace UnityEditor.Build.Pipeline.Utilities
             public static readonly GUIContent purgeCache = EditorGUIUtility.TrTextContent("Purge Cache");
             public static readonly GUIContent pruneCache = EditorGUIUtility.TrTextContent("Prune Cache");
             public static readonly GUIContent cacheSizeIs = EditorGUIUtility.TrTextContent("Cache size is");
+            public static readonly GUIContent buildPruneDisabled = EditorGUIUtility.TrTextContent("Disable Prune for Builds", "The cache pruning won't be executed during builds.");
             public static readonly GUIContent pleaseWait = EditorGUIUtility.TrTextContent("Please wait...");
             public static readonly GUIContent cacheServerConfig = EditorGUIUtility.TrTextContent("Cache Server Configuration");
             public static readonly GUIContent useBuildCacheServer = EditorGUIUtility.TrTextContent("Use Build Cache Server");
@@ -79,6 +80,7 @@ namespace UnityEditor.Build.Pipeline.Utilities
 #endif
             public int fileIDHashSeed = 0;
             public int prefabPackedHeaderSize = 2;
+            public bool buildPruneDisabled = false;
         }
 
         internal static Settings s_Settings = new Settings();
@@ -165,6 +167,12 @@ namespace UnityEditor.Build.Pipeline.Utilities
             set => CompareAndSet(ref s_Settings.useV2Hasher, value);
         }
 #endif
+
+        public static bool buildPruneDisabled
+        {
+            get => s_Settings.buildPruneDisabled;
+            set => CompareAndSet(ref s_Settings.buildPruneDisabled, value);
+        }
 
         // Internal as we don't want to allow setting these via API. We want to ensure they are saved to json, and checked in to the project version control.
         internal static int fileIDHashSeed
@@ -299,6 +307,8 @@ namespace UnityEditor.Build.Pipeline.Utilities
                 GUILayout.Label(Properties.cacheSizeIs.text + " " + EditorUtility.FormatBytes(Properties.currentCacheSize));
             else
                 GUILayout.Label(Properties.cacheSizeIs.text + " is being calculated...");
+            
+            s_Settings.buildPruneDisabled = EditorGUILayout.Toggle(Properties.buildPruneDisabled, s_Settings.buildPruneDisabled);
 
             GUILayout.Space(15);
             GUILayout.Label(Properties.cacheServerConfig, EditorStyles.boldLabel);
