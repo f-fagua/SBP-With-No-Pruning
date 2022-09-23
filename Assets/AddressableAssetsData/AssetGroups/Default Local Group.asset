@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 20363ea53de724478a371fcd950ada50
+  m_SerializeEntries:
+  - m_GUID: 943def205414240c981427803f2d1600
+    m_Address: Assets/Audio Clips/Songs/02-instrumental-hip hop.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: da5a769ac0e814c83b26b05256e70cd6
+    m_Address: Assets/Audio Clips/Songs/03-instrumental-random.ogg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 78b01313bf97149ec9a75233842d838c
+    m_Address: Assets/Audio Clips/Songs/01-instrumental blues.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 6d53f634a39584069998e44ea1fb67a1, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 863712888ff364d8e924feac1ccc8254, type: 2}
+    - {fileID: 11400000, guid: a8aab7520da644de3886a10dee1afe26, type: 2}

@@ -93,7 +93,7 @@ namespace UnityEditor.Build.Pipeline.Utilities
         const string k_CachePath = "Library/BuildCache";
         const int k_Version = 4;
         internal const int k_CacheServerVersion = 2;
-        internal const long k_BytesToGigaBytes = 1073741824L;
+        internal const long k_BytesToMegaBytes = 1073741824L / 1024L;
 
         [NonSerialized]
         IBuildLogger m_Logger;
@@ -743,7 +743,7 @@ namespace UnityEditor.Build.Pipeline.Utilities
         {
             ThreadingManager.WaitForOutstandingTasks();
             int maximumSize = ScriptableBuildPipeline.maximumCacheSize;
-            long maximumCacheSize = maximumSize * k_BytesToGigaBytes;
+            long maximumCacheSize = maximumSize * k_BytesToMegaBytes;
 
             // Get sizes based on common directory root for a guid / hash
             ComputeCacheSizeAndFolders(out long currentCacheSize, out List<CacheFolder> cacheFolders);
