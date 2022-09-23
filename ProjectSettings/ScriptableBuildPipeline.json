@@ -9,5 +9,6 @@
     "useDetailedBuildLog": false,
     "useV2Hasher": true,
     "fileIDHashSeed": 0,
-    "prefabPackedHeaderSize": 2
+    "prefabPackedHeaderSize": 2,
+    "buildPruneDisabled": true
 }
