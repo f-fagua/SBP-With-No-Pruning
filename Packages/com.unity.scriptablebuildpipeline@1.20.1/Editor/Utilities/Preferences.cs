@@ -51,7 +51,7 @@ namespace UnityEditor.Build.Pipeline.Utilities
             public static readonly GUIContent purgeCache = EditorGUIUtility.TrTextContent("Purge Cache");
             public static readonly GUIContent pruneCache = EditorGUIUtility.TrTextContent("Prune Cache");
             public static readonly GUIContent cacheSizeIs = EditorGUIUtility.TrTextContent("Cache size is");
-            public static readonly GUIContent buildPruneDisabled = EditorGUIUtility.TrTextContent("Disable Prune for Builds", "The cache pruning won't be executed during builds.");
+            public static readonly GUIContent buildPruneDisabled = EditorGUIUtility.TrTextContent("Disable Cache Pruning During Builds", "The cache pruning won't be executed during builds.");
             public static readonly GUIContent pleaseWait = EditorGUIUtility.TrTextContent("Please wait...");
             public static readonly GUIContent cacheServerConfig = EditorGUIUtility.TrTextContent("Cache Server Configuration");
             public static readonly GUIContent useBuildCacheServer = EditorGUIUtility.TrTextContent("Use Build Cache Server");

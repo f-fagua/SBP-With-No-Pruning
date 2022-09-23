@@ -157,7 +157,7 @@ namespace UnityEditor.Build.Pipeline
                 }
             }
 
-            long maximumCacheSize = ScriptableBuildPipeline.maximumCacheSize * BuildCache.k_BytesToMegaBytes;
+            long maximumCacheSize = ScriptableBuildPipeline.maximumCacheSize * BuildCache.k_BytesToGigaBytes;
             BuildCache.PruneCache_Background(maximumCacheSize);
             return exitCode;
         }
