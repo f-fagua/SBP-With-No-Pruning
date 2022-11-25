@@ -1,6 +1,6 @@
 <h1>Scriptable Build Pipeline With no Prunning</h1>
 
-<p>The SBP with no pruning is a custom version of the [Scriptable Build Pipeline](https://docs.unity3d.com/Packages/com.unity.scriptablebuildpipeline@1.19/manual/index.html) that allows users to disable the pruning when making the build.</p>
+The SBP with no pruning is a custom version of the [Scriptable Build Pipeline](https://docs.unity3d.com/Packages/com.unity.scriptablebuildpipeline@1.19/manual/index.html) that allows users to disable the pruning when making the build.
 
 <p>This custom version adds an option on the SBP preferences window to diable the pruning. That way, on their next build, the Build Cache (Library/BuildCache) won't be cleaned even if it surpasses the max size limit set.</p>
 
