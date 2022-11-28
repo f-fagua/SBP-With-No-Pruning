@@ -16,7 +16,7 @@ The SBP with no pruning is a custom version of the [Scriptable Build Pipeline](h
 
 <h2>Repository content</h2>
 
-<p>By disabling the prunning, you will favor the build time at the cost of the disk usage of your build machine. If it is a trade-off you can afford, you might like this custom version of the SBP.</p>
+<p>Sample project with ta custom SBP package.</p>
 
 <h2>How to use it</h2>
 
