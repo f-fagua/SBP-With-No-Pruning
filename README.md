@@ -12,7 +12,7 @@ The SBP with no pruning is a custom version of the [Scriptable Build Pipeline](h
 
 <p>On small projects, this might be fine. But it is a different story in large projects that target several platforms. Each target platform will produce different build artifacts for each asset on each platform. So, if your build pipeline discards the Android artifacts, the next time you build for that platform, it will take the same time as the first build you made.</p>
 
-<p>By disabling the prunning, you will favor the build time at the cost of the disk usage of your build machine. If it is a trade-off you can afford, you might like this custom version of the SBP.</p>
+<p>By disabling the pruning, you will favor the build time at the cost of the disk usage of your build machine. If it is a trade-off you can afford, you might like this custom version of the SBP.</p>
 
 <h2>Repository content</h2>
 
